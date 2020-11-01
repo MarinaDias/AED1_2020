@@ -16,12 +16,13 @@ float *duplicados(float *vetorPrincipal, int tamOriginal){
 			if (indice != j){
 				if (vetorPrincipal[indice] == vetorPrincipal[j]){
 					for (k=j; k<tamOriginal; k++){
-						vetorPrincipal[k] = vetorPrincipal[k+1];
+						if (k+1 < tamOriginal){
+							vetorPrincipal[k] = vetorPrincipal[k+1];
+						}
 					}
 					tamOriginal--;
 				}
 			}
-			
 		}
 	}
 
